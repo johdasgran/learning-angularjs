@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learn angular js</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-    <!-- <script src="todo.js"></script> -->
-    <!-- <link rel="stylesheet" href="todo.css"> -->
+    <!-- <script src="app.js"></script> -->
+    <!-- <link rel="stylesheet" href="app.css"> -->
     <script type="text/javascript">
 
       var app = angular.module("sample", []);
@@ -18,7 +18,18 @@
           name: "Tony",
           year: 23
         }
-      })
+        $scope.getName = function () {
+          return this.person.name;
+        }
+      });
+
+      app.controller("customerInfo", ["$scope", function ($scope) {
+        $scope.name = "Jack";
+        $scope.city = "Vienna";
+      }]);
+
+
+
 
 
     </script>
@@ -27,9 +38,15 @@
 <body ng-app="sample">
 
  <main ng-controller="emp">
-      <h1>Hi {{ name }}!</h1>
-      <p>And I'm {{ person }}</p>
+      <h1>Hi {{ getName() }}!</h1>
+      <p>And I'm {{ person.year }}</p>
  </main>
+
+
+ <section ng-controller="customerInfo" >
+  <h2> Hello Customer {{ name }}, looks like you are living in {{ city }} </h2>
+
+ </section>
 
 
 </body>
