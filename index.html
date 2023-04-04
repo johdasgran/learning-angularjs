@@ -6,47 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learn angular js</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-    <!-- <script src="app.js"></script> -->
+    <script src="app.js"></script>
     <!-- <link rel="stylesheet" href="app.css"> -->
-    <script type="text/javascript">
 
-      var app = angular.module("sample", []);
-
-      app.controller("emp", function ($scope) {
-        $scope.name = "Jag";
-        $scope.person = {
-          name: "Tony",
-          year: 23
-        }
-        $scope.getName = function () {
-          return this.person.name;
-        }
-      });
-
-      app.controller("customerInfo", ["$scope", function ($scope) {
-        $scope.city = "Vienna";
-      }]);
-
-
-
-
-
-    </script>
 
 </head>
-<body ng-app="sample">
+<body ng-app="app">
 
  <main ng-controller="emp">
-      <h1>Hi {{ getName() }}!</h1>
-      <p>And I'm {{ person.year }}</p>
+  
+    <h1>The sum of {{ a }} + {{ b }} = {{ a+b }}</h1>
 
-
-      
-       <section ng-controller="customerInfo" >
-        <h2> Hello Customer {{ name }}, looks like you are living in {{ city }} </h2>
-      
-       </section>
-
+    <h2>The value of a is <span ng-bind="a">asdas</span></h2>
+    <h2>The value of b is <span ng-bind="b"></span></h2>
 
  </main>
 
