@@ -24,7 +24,6 @@
       });
 
       app.controller("customerInfo", ["$scope", function ($scope) {
-        $scope.name = "Jack";
         $scope.city = "Vienna";
       }]);
 
@@ -40,14 +39,20 @@
  <main ng-controller="emp">
       <h1>Hi {{ getName() }}!</h1>
       <p>And I'm {{ person.year }}</p>
+
+
+      
+       <section ng-controller="customerInfo" >
+        <h2> Hello Customer {{ name }}, looks like you are living in {{ city }} </h2>
+      
+       </section>
+
+
  </main>
 
 
- <section ng-controller="customerInfo" >
-  <h2> Hello Customer {{ name }}, looks like you are living in {{ city }} </h2>
 
- </section>
-
+ 
 
 </body>
 </html>
