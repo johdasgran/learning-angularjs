@@ -4,11 +4,11 @@ app.controller("emp", ["$scope", "$http", function($scope, $http) {
   $scope.a = 10;
   $scope.b = 20;
 
+  $scope.msg = "This is message";
 
   // $scope.doData = function() {
   //   $scope.characters = getData.getCharacters()
   // }
-
 
   $http({
     url: 'https://finalspaceapi.com/api/v0/character',
@@ -23,14 +23,112 @@ app.controller("emp", ["$scope", "$http", function($scope, $http) {
     //failure function
     console.log(resp)
 
-  }
-  )
+  });
 
 
 
 
 
 }]);
+
+
+
+app.directive('myInfoMsg', function() {
+  return {
+    template: "<strong>{{msg}}</strong>"
+  }
+})
+
+app.directive('myCustomMsg', function() {
+  return {
+    templateUrl: "my-custom-msg.html"
+  }
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

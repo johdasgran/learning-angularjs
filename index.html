@@ -31,6 +31,7 @@
 
     
     <button ng-click="doData()">get characters</button>
+    <my-custom-msg></my-custom-msg>
     
     <!-- <p>{{characters}}</p>  -->
         
@@ -38,8 +39,9 @@
         <article ng-repeat="character in characters">
             <img src="{{character.img_url}}" alt="">
             <h1> {{character.name | uppercase}} </h1>
+            <p><span my-info-msg></span> {{character.status}}</p>
         </article>
-
+        
     </section>
 
 
