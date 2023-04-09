@@ -24,7 +24,12 @@ button {
   cursor: pointer;
 }
 
-.done-true {
-    text-decoration: line-through;
-    color: grey;
-  }
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+h1 {
+  font-size: 2rem;
+}

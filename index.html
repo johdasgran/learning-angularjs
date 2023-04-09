@@ -33,11 +33,14 @@
     <button ng-click="doData()">get characters</button>
     
     <!-- <p>{{characters}}</p>  -->
+        
+    <section class="container">
+        <article ng-repeat="character in characters">
+            <img src="{{character.img_url}}" alt="">
+            <h1> {{character.name | uppercase}} </h1>
+        </article>
 
-    <article ng-repeat="character in characters">
-        <img src="{{character.img_url}}" alt="">
-        <h1> {{character.name}} </h1>
-    </article>
+    </section>
 
 
  </main>
