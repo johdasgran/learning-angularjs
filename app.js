@@ -4,6 +4,7 @@ app.controller("emp", ["$scope", "$http", function($scope, $http) {
   $scope.a = 10;
   $scope.b = 20;
 
+
   $scope.msg = "This is message";
 
   // $scope.doData = function() {
@@ -47,9 +48,42 @@ app.directive('myCustomMsg', function() {
 
 
 
+app.controller('msg', ['$scope', function($scope){
 
 
 
+}])
+
+app.directive('message', function(){
+
+  return {
+
+    compile: function(tElement, tAttributes){
+      console.log(tAttributes.text + " -In compile")
+
+      return {
+        pre: function($scope, iElement, iAttributes){
+          console.log(iAttributes.text + " -In Pre")
+        },
+        post: function($scope, iElement, iAttributes){
+          console.log(iAttributes.text + " -In Post")
+        }
+      }
+
+
+    },
+
+    controller: function($scope, $element, $attrs){
+      console.log($attrs.text + " -In controller")
+    }
+
+
+
+
+
+
+  }
+})
 
 
 
