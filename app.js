@@ -49,50 +49,83 @@ app.directive('myCustomMsg', function() {
 
 
 app.controller('msg', ['$scope', function($scope){
-
-
+  $scope.m = "Hi {{ name }}";
 
 }])
 
+// app.directive('message', function(){
+
+//   return {
+
+//     compile: function(tElement, tAttributes){
+//       console.log(tAttributes.text + " -In compile")
+//       tElement.css("border", "1px solid papayawhip")
+
+//       return {
+//         pre: function(scope, iElement, iAttributes, controller){
+//           console.log(iAttributes.text + " -In Pre")
+//         },
+//         post: function(scope, iElement, iAttributes, controller){
+//           console.log(iAttributes.text + " -In Post")
+
+//           if(iAttributes.text === "3"){
+//             iElement.css("border", "1px solid #f34")
+//           }
+
+//           iElement.on("click", scope.btnClick)
+
+//         }
+//       }
+
+
+//     },
+
+//     controller: function($scope, $element, $attrs, $interpolate){
+
+//       // var v = $interpolate($attrs.text)($scope);
+
+//       // var interpolateFc = $interpolate($scope.m);
+//       // var interpolateFcE = interpolateFc({ name: 'Joy'});
+
+//       var interpolateFcE = $interpolate($scope.m)({name: 'Yu-chan'});
+
+
+
+//       console.log($attrs.text + " -In controller");
+
+//       $scope.btnClick = function(){
+//         alert(interpolateFcE)
+//         // alert("click on number: " + v)
+//       }
+
+
+//     }
+
+
+//   }
+// })
+
+
+
+
+
+
+
+
 app.directive('message', function(){
 
-  return {
+  //post-link function
+  return function(scope, iElement, iAttributes, controller){
+        iElement.css("border", "1px solid papayawhip")
+        console.log(iAttributes.text + " -In Post")
 
-    compile: function(tElement, tAttributes){
-      console.log(tAttributes.text + " -In compile")
-
-      return {
-        pre: function($scope, iElement, iAttributes){
-          console.log(iAttributes.text + " -In Pre")
-        },
-        post: function($scope, iElement, iAttributes){
-          console.log(iAttributes.text + " -In Post")
+        if(iAttributes.text === "3"){
+          iElement.css("border", "1px solid #f34")
         }
+
       }
 
-
-    },
-
-    controller: function($scope, $element, $attrs){
-      console.log($attrs.text + " -In controller")
-    }
-
-
-
-
-
-
-  }
 })
-
-
-
-
-
-
-
-
-
 
 
 
